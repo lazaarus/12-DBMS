@@ -1,1 +1,267 @@
-# 12-DBMS
+<html>
+<head>
+    <title>Database Concepts and SQL Reference</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        h2 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin: 5px 0;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Database Concepts and SQL Reference</h1>
+</header>
+
+<nav>
+    <a href="#data-information">Data & Information</a>
+    <a href="#dbms">DBMS</a>
+    <a href="#models">Database Models</a>
+    <a href="#integrity">Integrity Constraints</a>
+    <a href="#normalization">Normalization</a>
+    <a href="#security">Database Security</a>
+    <a href="#sql">SQL Data Types</a>
+</nav>
+
+<section id="data-information">
+    <h2>Data & Information</h2>
+    <p><strong>Data</strong> refers to raw facts and figures without context. <strong>Information</strong> is processed data that is meaningful and useful. Features of information include accuracy, relevance, timeliness, and completeness.</p>
+</section>
+
+<section id="dbms">
+    <h2>Database Management System (DBMS)</h2>
+    <p>A DBMS is software that manages databases, ensuring data is stored, retrieved, and manipulated efficiently. It provides a systematic way of managing data and allows multiple users to access the database concurrently.</p>
+    <h3>Objectives</h3>
+    <ul>
+        <li>Data Integrity</li>
+        <li>Data Security</li>
+        <li>Data Consistency</li>
+        <li>Data Redundancy Control</li>
+    </ul>
+    <h3>Advantages</h3>
+    <ul>
+        <li>Efficient Data Management</li>
+        <li>Data Security</li>
+        <li>Backup and Recovery</li>
+        <li>Concurrent Access</li>
+    </ul>
+    <h3>Disadvantages</h3>
+    <ul>
+        <li>Complexity</li>
+        <li>Cost</li>
+        <li>Performance Overhead</li>
+    </ul>
+</section>
+
+<section id="models">
+    <h2>Types of Database Models</h2>
+    <h3>Hierarchical Model</h3>
+    <p>Data is organized in a tree-like structure. Each child record has only one parent. Example: IBM's Information Management System (IMS).</p>
+    <h3>Network Model</h3>
+    <p>Data is organized using a graph structure, allowing multiple parent-child relationships. Example: Integrated Data Store (IDS).</p>
+    <h3>Relational Model</h3>
+    <p>Data is organized into tables (relations) with rows and columns. Example: MySQL, PostgreSQL.</p>
+    <h3>Entity-Relationship Model</h3>
+    <p>Data is represented using entities and relationships. Used for database design.</p>
+</section>
+
+<section id="integrity">
+    <h2>Integrity Constraints</h2>
+    <h3>Domain Integrity</h3>
+    <p>Ensures that all values in a column are of the same type and within a valid range.</p>
+    <h3>Entity Integrity</h3>
+    <p>Ensures that each table has a primary key and that the key is unique and not null.</p>
+    <h3>Referential Integrity</h3>
+    <p>Ensures that foreign keys correctly point to primary keys in other tables.</p>
+</section>
+
+<section id="normalization">
+    <h2>Normalization</h2>
+    <p>Normalization is the process of organizing data to reduce redundancy and improve data integrity.</p>
+    <h3>Normal Forms</h3>
+    <ul>
+        <li><strong>1NF</strong>: Eliminate duplicate columns; create separate tables for related data.</li>
+        <li><strong>2NF</strong>: Remove partial dependencies; all non-key attributes must depend on the whole primary key.</li>
+        <li><strong>3NF</strong>: Remove transitive dependencies; non-key attributes must not depend on other non-key attributes.</li>
+    </ul>
+    <h3>Advantages</h3>
+    <ul>
+        <li>Eliminates Redundancy</li>
+        <li>Improves Data Integrity</li>
+        <li>Efficient Data Updates</li>
+    </ul>
+    <h3>Disadvantages</h3>
+    <ul>
+        <li>Complex Queries</li>
+        <li>Performance Overhead</li>
+    </ul>
+</section>
+
+<section id="security">
+    <h2>Database Security</h2>
+    <p>Database security involves measures to protect data from unauthorized access and corruption.</p>
+    <h3>Challenges</h3>
+    <ul>
+        <li>Unauthorized Access</li>
+        <li>Data Breaches</li>
+        <li>Data Corruption</li>
+    </ul>
+    <h3>Security Measures</h3>
+    <ul>
+        <li>Access Control</li>
+        <li>Encryption</li>
+        <li>Auditing</li>
+        <li>Backup and Recovery</li>
+    </ul>
+</section>
+
+<section id="sql">
+    <h2>SQL Data Types</h2>
+    <p>SQL provides various data types to define the nature of data in a table.</p>
+    <h3>Character Types</h3>
+    <ul>
+        <li><strong>CHAR</strong>: Fixed-length character string.</li>
+        <li><strong>VARCHAR</strong>: Variable-length character string.</li>
+    </ul>
+    <h3>Binary Types</h3>
+    <ul>
+        <li><strong>BINARY</strong>: Fixed-length binary data.</li>
+        <li><strong>VARBINARY</strong>: Variable-length binary data.</li>
+    </ul>
+    <h3>Text Types</h3>
+    <ul>
+        <li><strong>TINYTEXT</strong>: Very short text string.</li>
+        <li><strong>TEXT</strong>: Short text string.</li>
+        <li><strong>LONGTEXT</strong>: Long text string.</li>
+    </ul>
+    <h3>Numeric Types</h3>
+    <ul>
+        <li><strong>INT</strong>: Integer.</li>
+        <li><strong>FLOAT</strong>: Floating-point number.</li>
+        <li><strong>DOUBLE</strong>: Double precision floating-point number.</li>
+        <li><strong>DECIMAL</strong>: Fixed-point number.</li>
+    </ul>
+    <h3>Date and Time Types</h3>
+    <ul>
+        <li><strong>DATE</strong>: Date value.</li>
+        <li><strong>DATETIME</strong>: Date and time value.</li>
+    </ul>
+    <h3>Other Types</h3>
+    <ul>
+        <li><strong>ENUM</strong>: Enumeration; a list of predefined values.</li>
+        <li><strong>BIT</strong>: Bit-field.</li>
+        <li><strong>BOOLEAN</strong>: Boolean value (TRUE or FALSE).</li>
+        <li><strong>TINYINT</strong>: Very small integer.</li>
+    </ul>
+</section>
+<section>
+    <h1>Table</h1>
+    <table>
+        <tr>
+            <th>S.N</th>
+            <th>Topic</th>
+            <th>Content wise marks</th>
+            <th>working hours</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>data management system</td>
+            <td>8</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>data communication and networking</td>
+            <td>9</td>
+            <td>15</td>
+        </tr>
+            <td>3</td>
+            <td>web tech-II</td>
+            <td>8</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>C programming II</td>
+            <td>8</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Object oriented programming</td>
+            <td>6</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>software development life cycle</td>
+            <td>6</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Recent trends in technologia</td>
+            <td>5</td>
+            <td>9<td>
+        </tr>
+        <tr>
+            <th colspan="2">total</th>
+            <th>50</th>
+            <th>80</th>
+        </tr>
+    </table>
+</section>
+
+</body>
+</html>
